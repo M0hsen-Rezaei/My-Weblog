@@ -2,6 +2,7 @@
   "name": "weblog",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://m0hsen-rezaei.github.io/",
   "dependencies": {
     "@fortawesome/free-solid-svg-icons": "^6.5.2",
     "@fortawesome/react-fontawesome": "^0.2.2",
@@ -15,7 +16,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "react-scripts build --base=./",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

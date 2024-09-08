@@ -1,14 +1,26 @@
-import React from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faHome,faUser,faAddressBook,faPhone } from '@fortawesome/free-solid-svg-icons'
+import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHome, faUser, faAddressBook, faPhone } from '@fortawesome/free-solid-svg-icons';
 
-export default function MobileMenu({handler , ClassActive}) {
+const menuItems = [
+    { name: 'home', icon: faHome },
+    { name: 'attributes', icon: faUser },
+    { name: 'rezome', icon: faAddressBook },
+    { name: 'conect', icon: faPhone },
+];
+
+export default function MobileMenu({ handler, classActive }) {
     return (
-        <div class="menu-mobile">
-            <div onClick={()=>{handler("home")}} className={ClassActive == "home" ? "item-active" : ""}><FontAwesomeIcon icon={faHome}></FontAwesomeIcon></div>
-            <div onClick={()=>{handler("attributes")}} className={ClassActive == "attributes" ? "item-active" : ""}><FontAwesomeIcon icon={faUser}></FontAwesomeIcon></div>
-            <div onClick={()=>{handler("rezome")}} className={ClassActive == "rezome" ? "item-active" : ""}><FontAwesomeIcon icon={faAddressBook}></FontAwesomeIcon></div>
-            <div onClick={()=>{handler("conect")}} className={ClassActive == "conect" ? "item-active" : ""}><FontAwesomeIcon icon={faPhone}></FontAwesomeIcon></div>
+        <div className="menu-mobile">
+            {menuItems.map(({ name, icon }) => (
+                <div 
+                    key={name}
+                    onClick={() => handler(name)} 
+                    className={classActive === name ? "item-active" : ""}
+                >
+                    <FontAwesomeIcon icon={icon} />
+                </div>
+            ))}
         </div>
-    )
+    );
 }

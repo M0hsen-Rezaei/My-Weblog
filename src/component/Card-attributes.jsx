@@ -1,8 +1,8 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faAngleRight,faAngleLeft } from '@fortawesome/free-solid-svg-icons'
+import { faAngleRight, faAngleLeft } from '@fortawesome/free-solid-svg-icons'
 
-export default function Card_attributes({handler}) {
+export default function Card_attributes({ handler }) {
   return (
     <div className="body" id="card-attributes">
       <header className="page-name">
@@ -29,8 +29,8 @@ export default function Card_attributes({handler}) {
         </div>
       </div>
       <footer>
-      <div onClick={()=> {handler("attributes" , "next")}} className="arow next"><FontAwesomeIcon icon={faAngleRight}></FontAwesomeIcon></div>
-      <div onClick={()=> {handler("attributes" , "prev")}} className="arow prev"><FontAwesomeIcon icon={faAngleLeft}></FontAwesomeIcon></div>
+        <div onClick={() => { handler("attributes", "next") }} className="arow next"><FontAwesomeIcon icon={faAngleRight}></FontAwesomeIcon></div>
+        <div onClick={() => { handler("attributes", "prev") }} className="arow prev"><FontAwesomeIcon icon={faAngleLeft}></FontAwesomeIcon></div>
       </footer>
     </div>
   )

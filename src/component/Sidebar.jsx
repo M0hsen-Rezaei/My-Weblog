@@ -1,13 +1,16 @@
-import React from 'react'
-import profile from './src/img/profile.jpg'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faHome,faUser,faAddressBook,faPhone } from '@fortawesome/free-solid-svg-icons'
-import { useState } from 'react'
+import React from 'react';
+import profile from './src/img/profile.jpg';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHome, faUser, faAddressBook, faPhone } from '@fortawesome/free-solid-svg-icons';
 
+const menuItems = [
+    { name: 'home', icon: faHome, label: 'صفحه اصلی' },
+    { name: 'attributes', icon: faUser, label: 'مشخصات من' },
+    { name: 'rezome', icon: faAddressBook, label: 'رزومه من' },
+    { name: 'conect', icon: faPhone, label: 'تماس با من' },
+];
 
-export default function Sidebar({handler , ClassActive}) {
-
-
+export default function Sidebar({ handler, classActive }) {
     return (
         <aside className="sidebar">
             <div className="user">
@@ -16,12 +19,17 @@ export default function Sidebar({handler , ClassActive}) {
             </div>
             <div className="list-item">
                 <ul className="items">
-                    <div onClick={()=>{handler("home")}} className={ClassActive == "home" ? "item-container-active" : "item-container"}><FontAwesomeIcon icon={faHome}></FontAwesomeIcon><li className="item" >صفحه اصلی</li></div>
-                    <div onClick={()=>{handler("attributes")}} className={ClassActive == "attributes" ? "item-container-active" : "item-container"}><FontAwesomeIcon icon={faUser}></FontAwesomeIcon><li className="item" >مشخصات من</li></div>
-                    <div onClick={()=>{handler("rezome")}} className={ClassActive == "rezome" ? "item-container-active" : "item-container"}><FontAwesomeIcon icon={faAddressBook}></FontAwesomeIcon><li className="item" >رزومه من</li></div>
-                    <div onClick={()=>{handler("conect")}} className={ClassActive == "conect" ? "item-container-active" : "item-container"}><FontAwesomeIcon icon={faPhone}></FontAwesomeIcon><li className="item" >تماس با من</li></div>
+                    {menuItems.map(({ name, icon, label }) => (
+                        <li key={name} 
+                            onClick={() => handler(name)} 
+                            className={classActive === name ? "item-container-active" : "item-container"}
+                        >
+                            <FontAwesomeIcon icon={icon} />
+                            <span className="item">{label}</span>
+                        </li>
+                    ))}
                 </ul>
             </div>
         </aside>
-    )
+    );
 }

@@ -1,90 +1,71 @@
-import React from 'react'
-import './style.css'
-import Sidebar from './Sidebar'
-import Header from './Header'
-import MobileMenu from './MobileMenu'
-import Card_home from './Card-home'
-import Card_attributes from './Card-attributes'
-import Card_rezome from './Card-rezome'
-import Card_conect from './Card-conect'
-import { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react';
+import './style.css';
+import Sidebar from './Sidebar';
+import Header from './Header';
+import MobileMenu from './MobileMenu';
+import Card_home from './Card-home';
+import Card_attributes from './Card-attributes';
+import Card_rezome from './Card-rezome';
+import Card_conect from './Card-conect';
+
+const Cards = {
+    home: Card_home,
+    attributes: Card_attributes,
+    rezome: Card_rezome,
+    conect: Card_conect,
+};
 
 export default function Weblog() {
-
-    const Cards = ["home", "attributes", "rezome", "conect"]
-    const [ActiveCard, setActiveCard] = useState(Cards[0])
-    let [ShowCard, setShowCard] = useState()
-    const [LightMode, setLightMode] = useState(false)
-
+    const [activeCard, setActiveCard] = useState('home');
+    const [showCard, setShowCard] = useState(<Card_home />);
+    const [lightMode, setLightMode] = useState(false);
 
     useEffect(() => {
-        if (ActiveCard == "home") {
-            setShowCard(<Card_home handler={handleAroww}></Card_home>)
-        } else if (ActiveCard == "attributes") {
-            setShowCard(<Card_attributes handler={handleAroww}></Card_attributes>)
-        } else if (ActiveCard == "rezome") {
-            setShowCard(<Card_rezome handler={handleAroww}></Card_rezome>)
-        } else if (ActiveCard == "conect") {
-            setShowCard(<Card_conect handler={handleAroww}></Card_conect>)
+        const CurrentCard = Cards[activeCard];
+        setShowCard(<CurrentCard handler={handleArrow} />);
+    }, [activeCard]);
+
+    const handleActiveCard = (card) => {
+        setActiveCard(card);
+    };
+
+    const getNextIndex = (index, direction) => {
+        const length = Object.keys(Cards).length;
+        return direction === 'next'
+            ? (index + 1) % length
+            : (index - 1 + length) % length;
+    };
+
+    const handleArrow = (card, type) => {
+        const index = Object.keys(Cards).indexOf(card);
+        const nextIndex = getNextIndex(index, type);
+        setActiveCard(Object.keys(Cards)[nextIndex]);
+    };
+
+    const switchCard = (e) => {
+        if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
+            const direction = e.key === 'ArrowRight' ? 'next' : 'prev';
+            handleArrow(activeCard, direction);
         }
-    }, [ActiveCard])
+    };
 
-
-    function handleActiveCard(card) {
-        setActiveCard(card)
-        console.log(ActiveCard);
-    }
-
-    function getNextIndex(index, direction) {
-        const length = Cards.length
-        if (direction === "next") {
-            return (index + 1) % length
-        } else if (direction === "prev") {
-            return (index - 1 + length) % length
-        }
-    }
-
-    function handleAroww(card, type) {
-        const index = Cards.indexOf(card)
-        const nextIndex = getNextIndex(index, type)
-        setActiveCard(Cards[nextIndex])
-    }
-
-
-    function sswitchCard(e) {
-        if (e.key == "ArrowRight") {
-            const index = Cards.indexOf(ActiveCard)
-            const nextIndex = getNextIndex(index, "next")
-            setActiveCard(Cards[nextIndex])
-            console.log(e.key);
-        }
-        else if (e.key == "ArrowLeft") {
-            const index = Cards.indexOf(ActiveCard)
-            const nextIndex = getNextIndex(index, "prev")
-            setActiveCard(Cards[nextIndex])
-            console.log(e.key);
-        }
-    }
-
-    function handleTheem() {
-        setLightMode(!LightMode)
-    }
+    const toggleTheme = () => {
+        setLightMode(prevMode => !prevMode);
+    };
 
     return (
-
-        <div tabIndex="0" onKeyDown={($event) => { sswitchCard($event) }} className={`container ${LightMode ? "light-mode" : "dark-mode"}`} dir="rtl">
-
-            <Header handleChange={handleTheem} theemIcon={LightMode ? "sun" : "moon"}></Header>
-
+        <div
+            tabIndex="0"
+            onKeyDown={switchCard}
+            className={`container ${lightMode ? 'light-mode' : 'dark-mode'}`}
+            dir="rtl"
+        >
+            <Header handleChange={toggleTheme} themeIcon={lightMode ? 'sun' : 'moon'} />
             <div className="container-main">
-                <Sidebar handler={handleActiveCard} ClassActive={ActiveCard}></Sidebar>
-                {ShowCard}
+                <Sidebar handler={handleActiveCard} classActive={activeCard} />
+                {showCard}
             </div>
-
-            <MobileMenu handler={handleActiveCard} ClassActive={ActiveCard}></MobileMenu>
-
-
+            <MobileMenu handler={handleActiveCard} classActive={activeCard} />
         </div>
-
-    )
+    );
 }

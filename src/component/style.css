@@ -107,6 +107,10 @@
     font-family: 'nazanin';
     src: url('./src/font/B-NAZANIN.TTF');
 }
+@font-face {
+    font-family: 'roboto';
+    src: url('./src/font/Roboto-Medium.ttf');
+}
 
 :root {
     --main-coler: #01BD94;
@@ -116,6 +120,8 @@
     --card-bg: #41414186;
     --card-bg-second: #CCCCCC7d;
     --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --sun-coler : #dcb314;
+    --month-coler : #170373;
 }
 
 /* light mode */
@@ -135,7 +141,7 @@
     background-color: var(--text-color) !important;
 }
 
-.light-mode .item-container-active li {
+.light-mode .item-container-active span {
     color: var(--bg-color) !important;
 }
 
@@ -188,10 +194,10 @@
 }
 
 .light-mode .checkbox-label svg path{
-    color: var(--text-color) !important;
+    color: var(--sun-coler) !important;
 }
 .dark-mode .checkbox-label svg path{
-    color: var(--text-color-second) !important;
+    color: var(--month-coler) !important;
 }
 
 .checkbox-label .ball {
@@ -283,8 +289,8 @@ body {
 }
 
 .img-user {
-    width: 9vw;
-    height: 9vw;
+    width: 8vw;
+    height: 8vw;
     border-radius: 50%;
 }
 
@@ -468,4 +474,59 @@ body {
 
 .menu-mobile{
     display: none;
+}
+
+
+
+
+/* CARD CONECT */
+
+
+.logo-icon{
+    width: 7vw;
+    min-width: 70px;
+}
+
+#page-conect{
+    width: 100%;
+    height: 100%;
+}
+
+.container-rows{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 90%;
+}
+
+.list-conects{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.item-conect a{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 20px;
+    text-decoration: none;
+}
+.item-conect a img{
+    cursor: pointer;
+    -webkit-filter: grayscale(70%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(70%);
+    transition: transform 1s;
+}
+.item-conect a img:hover{
+    -webkit-filter: grayscale(0%) !important; /* Safari 6.0 - 9.0 */
+    filter: grayscale(0%) !important;
+    width: 9vw;
+    transform: translateY(-20px);
+}
+.item-conect a p{
+    font-family: 'roboto';
+    font-size: 16px;
+    margin-top: 4px;
 }
