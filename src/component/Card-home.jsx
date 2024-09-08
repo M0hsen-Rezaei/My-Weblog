@@ -3,7 +3,7 @@ import user from './src/img/user.jpg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleRight,faAngleLeft } from '@fortawesome/free-solid-svg-icons'
 
-export default function Card_home({handler}) {
+export default function Card_home({handler , handlerActiveCard}) {
   return (
     <div className="body" id="card-home">
     <header className="page-name">
@@ -22,8 +22,9 @@ export default function Card_home({handler}) {
         </div>
         <div className="row2">
             <div className="description">
-                لورم ایپسوم متن ساخت از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان طلبد،ایجاد کرد، در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها، و شرایط سخت تایپ به پایان رسد و زمان مورد نیاز طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان طلبد،ایجاد کردشامل حروف چینی دستاوردهای اصلی، و جوابگوی
+                دانشجوی کارشناسی پیوسته مهندسی کامپیوتر در دانشگاه آزاد اسلامی خمینی شهر <br></br>برنامه نویس فرانت اند مسلط به <b>react</b> <br></br>کارشناس و پشتیبان سایت مسلط به <b>وردپرس</b> <br></br> کار با نرم افزار های فتوشاپ و فیگما
             </div>
+        <a onClick={()=> {handlerActiveCard("rezome");}} className='btn'>تماس با من</a>
         </div>
     </div>
     <footer>

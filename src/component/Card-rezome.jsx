@@ -1,6 +1,7 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleRight,faAngleLeft } from '@fortawesome/free-solid-svg-icons'
+import myRezome from './src/img/MyResume-1.jpg'
 
 export default function Card_rezome({handler}) {
     return (
@@ -10,6 +11,8 @@ export default function Card_rezome({handler}) {
             </header>
 
             <div id="page-rezome">
+                <a href={myRezome}><img className='img-rezome' src={myRezome} alt="" /></a>
+                <a href={myRezome} className='btn' download={myRezome}>دانلود</a>
 
             </div>
             <footer>

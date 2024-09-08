@@ -391,6 +391,16 @@ body {
     text-align: right;
 }
 
+.btn{
+    background-color: var(--main-coler);
+    border-radius: 16px;
+    padding: 5px 15px;
+    border: none;
+    text-decoration: none;
+    font-weight: bolder;
+    cursor: pointer;
+}
+
 
 
 
@@ -429,6 +439,7 @@ body {
 
 .description {
     text-align: center;
+    padding-bottom: 15px;
 }
 
 .container-main footer {
@@ -474,6 +485,23 @@ body {
 
 .menu-mobile{
     display: none;
+}
+
+
+
+/* CARD REZOME */
+
+#page-rezome{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+}
+
+.img-rezome{
+    width: 19vw;
+    margin-bottom: 10px;
+    cursor: pointer;
 }
 
 

@@ -22,11 +22,12 @@ export default function Weblog() {
 
     useEffect(() => {
         const CurrentCard = Cards[activeCard];
-        setShowCard(<CurrentCard handler={handleArrow} />);
+        setShowCard(<CurrentCard handler={handleArrow} handlerActiveCard={handleActiveCard}  />);
     }, [activeCard]);
 
     const handleActiveCard = (card) => {
         setActiveCard(card);
+
     };
 
     const getNextIndex = (index, direction) => {
