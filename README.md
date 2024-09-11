@@ -1,32 +1,16 @@
-<p align="left">My Weblog</p>
+<p align="center">🔸My Weblog🔸</p>
 
 ###
 
-<p align="left">perview :</p>
+<p align="center">this is a personal blog</p>
 
 ###
 
-<div align="center">
-  <img height="200" src="./preview-DarkMode.png"  />
-</div>
+<p align="left">📡 Technologies used :</p>
 
 ###
 
-<p align="left">responsive :</p>
-
-###
-
-<div align="center">
-  <img height="200" src="./preview-mobile.png"  />
-</div>
-
-###
-
-<p align="left">by :</p>
-
-###
-
-<div align="center">
+<div align="left">
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" height="40" alt="react logo"  />
   <img width="12" />
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" height="40" alt="javascript logo"  />
