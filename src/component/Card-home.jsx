@@ -24,7 +24,7 @@ export default function Card_home({handler , handlerActiveCard}) {
             <div className="description">
                 دانشجوی کارشناسی پیوسته مهندسی کامپیوتر در دانشگاه آزاد اسلامی خمینی شهر <br></br>برنامه نویس فرانت اند مسلط به <b>react</b> <br></br>کارشناس و پشتیبان سایت مسلط به <b>وردپرس</b> <br></br> کار با نرم افزار های فتوشاپ و فیگما
             </div>
-        <a onClick={()=> {handlerActiveCard("rezome");}} className='btn'>تماس با من</a>
+        <a onClick={()=> {handlerActiveCard("conect");}} className='btn'>تماس با من</a>
         </div>
     </div>
     <footer>

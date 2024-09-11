@@ -16,6 +16,11 @@
     .page-name{
         padding: 0 !important;
         align-self: flex-start;
+        padding-right: 12px !important;
+    }
+
+    #page-attributes{
+        margin-top: 120px !important;
     }
 
     .row1{
@@ -36,6 +41,8 @@
     .bio p{
         height: 20px !important;
         font-size: 1.3rem !important;
+        margin-bottom: 10px;
+        margin-top: 10px;
     }
 
     .text-bold{
@@ -44,12 +51,13 @@
 
     .description{
         font-size: .9rem;
+        padding-top: 10px;
+        line-height: 30px;
     }
 
     .body{
         width: 85vw !important;
-        height: 75vh !important;
-        padding: 5px 15px !important;
+        height: 70vh !important;
     }
 
     .arow{
@@ -58,6 +66,15 @@
         display: flex;
         align-items: center;
         justify-content: center;
+    }
+
+    .item-conect a{
+        padding: 0 15px !important;
+    }
+
+
+    .img-rezome{
+        margin-top: 60px !important;
     }
 
     .menu-mobile{
@@ -186,7 +203,7 @@
 }
 
 .sun {
-    background-color: var(--text-color-second);
+    background-color: #505050;
 }
 
 .moon {
@@ -194,10 +211,10 @@
 }
 
 .light-mode .checkbox-label svg path{
-    color: var(--sun-coler) !important;
+    color: var(--main-coler) !important;
 }
 .dark-mode .checkbox-label svg path{
-    color: var(--month-coler) !important;
+    color: var(--main-coler) !important;
 }
 
 .checkbox-label .ball {
@@ -366,7 +383,7 @@ body {
 /* ALL CARD */
 .container-main {
     width: 100%;
-    height: 100vh;
+    height: 85vh;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -377,7 +394,7 @@ body {
 .body {
     width: 50vw;
     background-color: var(--card-bg);
-    height: 75vh;
+    height: 80vh;
     border-radius: 24px;
     position: relative;
     padding-top: 20px;
@@ -394,7 +411,7 @@ body {
 .btn{
     background-color: var(--main-coler);
     border-radius: 16px;
-    padding: 5px 15px;
+    padding: 8px 18px;
     border: none;
     text-decoration: none;
     font-weight: bolder;
@@ -500,8 +517,10 @@ body {
 
 .img-rezome{
     width: 19vw;
+    min-width: 220px;
     margin-bottom: 10px;
     cursor: pointer;
+    margin-top: 10px;
 }
 
 
@@ -512,7 +531,7 @@ body {
 
 .logo-icon{
     width: 7vw;
-    min-width: 70px;
+    min-width: 60px;
 }
 
 #page-conect{
@@ -543,15 +562,21 @@ body {
 }
 .item-conect a img{
     cursor: pointer;
-    -webkit-filter: grayscale(70%); /* Safari 6.0 - 9.0 */
+    -webkit-filter: grayscale(70%); 
     filter: grayscale(70%);
     transition: transform 1s;
 }
 .item-conect a img:hover{
-    -webkit-filter: grayscale(0%) !important; /* Safari 6.0 - 9.0 */
+    -webkit-filter: grayscale(0%) !important;
     filter: grayscale(0%) !important;
     width: 9vw;
     transform: translateY(-20px);
+}
+@media only screen and (max-width: 767px){
+    .item-conect a img{
+        -webkit-filter: grayscale(0%) !important; 
+        filter: grayscale(0%) !important;
+    }
 }
 .item-conect a p{
     font-family: 'roboto';
