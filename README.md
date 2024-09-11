@@ -7,7 +7,7 @@
 ###
 
 <div align="center">
-  <img height="200" src="./preview.png"  />
+  <img height="200" src="./preview-DarkMode.png"  />
 </div>
 
 ###
