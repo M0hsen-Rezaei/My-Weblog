@@ -2,7 +2,7 @@
 
 ###
 
-<p align="center">this is a personal blog</p>
+<p align="center">this is my personal blog</p>
 
 ###
 
